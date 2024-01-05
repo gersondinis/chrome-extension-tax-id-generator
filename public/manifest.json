@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Tax ID generator",
   "description": "Tax ID Generator util",
-  "version": "1.0",
+  "version": "1.1",
   "icons": {
     "16": "assets/icon-16.png",
     "32": "assets/icon-32.png",
