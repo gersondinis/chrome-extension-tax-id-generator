@@ -1,5 +1,5 @@
 # TaxID Generator
-![image](https://github.com/gersondinis/chrome-extension-tax-id-generator/assets/10350627/e03517d1-59cc-48cb-9a64-3a136acb27f7)
+![image](https://github.com/gersondinis/chrome-extension-tax-id-generator/assets/10350627/79c78ced-aa71-4a63-9c9e-2df07e31e0ef)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
