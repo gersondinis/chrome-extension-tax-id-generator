@@ -1,6 +1,8 @@
 # TaxID Generator
 ![image](https://github.com/gersondinis/chrome-extension-tax-id-generator/assets/10350627/79c78ced-aa71-4a63-9c9e-2df07e31e0ef)
 
+![chrome extension](https://chromewebstore.google.com/detail/fhinhgicbbfififkdakanlfhgbibllgn)
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Introducing Tax ID Generator, your ultimate tool for generating realistic tax IDs for mock and QA scenarios.
