@@ -1,33 +1,35 @@
-function generateDateOfBirth(): string {
-  const year = Math.floor(Math.random() * 80) + 1900;
-  const month = Math.floor(Math.random() * 12) + 1;
-  const day = Math.floor(Math.random() * 28) + 1;
+function randomDigits(length: number) {
+  let result = '';
 
-  return `${year}${month}${day}`;
-}
-
-function generateCheckDigit(dateOfBirth: string): string {
-  // Calculate check digit using Luhn algorithm
-  const digits = dateOfBirth.split('');
-  let checksum = 0;
-  for (let i = 0; i < digits.length; i++) {
-    let digit = parseInt(digits[i]);
-    if (i % 2 === 0) { // Even index
-      digit *= 2;
-      if (digit > 9) {
-        digit -= 9;
-      }
-    }
-    checksum += digit;
+  for (let i = 0; i < length; i++) {
+    result += Math.floor(Math.random() * 10);
   }
-  checksum = (10 - checksum % 10) % 10;
-  return checksum.toString();
+
+  return result;
 }
 
+// Luhn variant: odd positions as is, even positions doubled
+function checkDigit(value: string) {
+  let sum = 0;
+
+  for (let i = 0; i < value.length; i++) {
+    let digit = Number(value[i]);
+
+    if (i % 2 === 1) {
+      digit *= 2;
+      if (digit > 9) digit -= 9;
+    }
+
+    sum += digit;
+  }
+
+  return '' + ((10 - (sum % 10)) % 10);
+}
+
+// 7 digit company number + 3 digit tax office code (001-100) + check digit
 export function generatePartitaIVA() {
-  const dateOfBirth = generateDateOfBirth();
-  const checkDigit = generateCheckDigit(dateOfBirth);
-  const codiceFiscale = dateOfBirth + checkDigit;
-  return codiceFiscale.padStart(11, '0');
-}
+  const office = String(Math.floor(Math.random() * 100) + 1).padStart(3, '0');
+  const value = randomDigits(7) + office;
 
+  return value + checkDigit(value);
+}
